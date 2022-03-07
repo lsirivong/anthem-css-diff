@@ -64,113 +64,88 @@ Because I do not give a damn."
 */
 .m-tb-0 {
   margin-top: 0 !important;
-  margin-bottom: 0 !important;
-}
+  margin-bottom: 0 !important; }
 
 .m-t-1 {
-  margin-top: 1rem !important;
-}
+  margin-top: 1rem !important; }
 
 .m-t-0 {
-  margin-top: 0 !important;
-}
+  margin-top: 0 !important; }
 
 .m-t-a {
-  margin-top: auto !important;
-}
+  margin-top: auto !important; }
 
 .m-t-5 {
-  margin-top: 0.5rem !important;
-}
+  margin-top: 0.5rem !important; }
 
 .m-b-1 {
-  margin-bottom: 1rem !important;
-}
+  margin-bottom: 1rem !important; }
 
 .m-b-5 {
-  margin-bottom: 0.5rem !important;
-}
+  margin-bottom: 0.5rem !important; }
 
 .m-b-a {
-  margin-bottom: auto !important;
-}
+  margin-bottom: auto !important; }
 
 .m-tb-1 {
   margin-top: 1rem !important;
-  margin-bottom: 1rem !important;
-}
+  margin-bottom: 1rem !important; }
 
 .m-tb-5 {
   margin-top: 0.5rem !important;
-  margin-bottom: 0.5rem !important;
-}
+  margin-bottom: 0.5rem !important; }
 
 .m-t-2 {
-  margin-top: 2rem !important;
-}
+  margin-top: 2rem !important; }
 
 .m-b-2 {
-  margin-bottom: 2rem !important;
-}
+  margin-bottom: 2rem !important; }
 
 .m-l-1 {
-  margin-left: 1rem !important;
-}
+  margin-left: 1rem !important; }
 
 .m-l-a {
-  margin-left: auto !important;
-}
+  margin-left: auto !important; }
 
 .m-l-2 {
-  margin-left: 2rem !important;
-}
+  margin-left: 2rem !important; }
 
 .m-l-5 {
-  margin-left: 0.5rem !important;
-}
+  margin-left: 0.5rem !important; }
 
 .m-r-1 {
-  margin-right: 1rem !important;
-}
+  margin-right: 1rem !important; }
 
 .m-r-5 {
-  margin-right: 0.5rem !important;
-}
+  margin-right: 0.5rem !important; }
 
 .m-r-a {
-  margin-right: auto !important;
-}
+  margin-right: auto !important; }
 
 .e-image, .l-segment:after {
   content: "";
   display: block;
-  clear: both;
-}
+  clear: both; }
 
 .c-entry-content *[id],
 .c-image-grid__item,
 .c-package-cover__entry {
-  position: relative;
-}
+  position: relative; }
 
 .c-float-right, .c-float-left {
   position: relative;
-  z-index: 2;
-}
+  z-index: 2; }
 .c-float-right .e-image, .c-float-left .e-image {
-  margin-top: 0;
-}
+  margin-top: 0; }
 
 .c-entry-content > div[id]:not([class]) {
-  clear: both;
-}
+  clear: both; }
 
 .p-anthem-selection {
   z-index: 9999999999;
   position: absolute;
   left: 10px;
-  top: 10px;
-}
+  top: 10px; }
 
 .p-anthem-selection .p-anthem-selection__button.p-anthem-selection__button {
   padding: 4px 10px;
@@ -182,21 +157,17 @@ Because I do not give a damn."
   font-weight: normal;
   font-family: "graphik", system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", Helvetica, "Lucida Grande", Arial, sans-serif;
   text-transform: none;
-  margin-right: 0.5em;
-}
+  margin-right: 0.5em; }
 .p-anthem-selection .p-anthem-selection__button.p-anthem-selection__button:hover, .p-anthem-selection .p-anthem-selection__button.p-anthem-selection__button:active, .p-anthem-selection .p-anthem-selection__button.p-anthem-selection__button:focus, .p-anthem-selection .p-anthem-selection__button.p-anthem-selection__button.is-active {
   background-color: #94E784;
   box-shadow: none;
-  outline: none;
-}
+  outline: none; }
 .p-anthem-selection .p-anthem-selection__button.p-anthem-selection__button:hover {
   background-color: #6fdf59;
-  color: #0B5050;
-}
+  color: #0B5050; }
 .p-anthem-selection .p-anthem-selection__button.p-anthem-selection__button:active, .p-anthem-selection .p-anthem-selection__button.p-anthem-selection__button.is-active {
   background-color: #E0E0E0;
-  color: #0057B3;
-}
+  color: #0057B3; }
 
 .p-anthem-selection .p-anthem-selection__checkbox {
   position: absolute;
@@ -204,8 +175,7 @@ Because I do not give a damn."
   height: 1px;
   width: 1px;
   overflow: hidden;
-  clip: rect(1px, 1px, 1px, 1px);
-}
+  clip: rect(1px, 1px, 1px, 1px); }
 .p-anthem-selection .p-anthem-selection__checkbox + b {
   display: inline-block;
   width: calc(1em - 1px);
@@ -217,20 +187,16 @@ Because I do not give a damn."
   background-color: #94E784;
   position: relative;
   top: 1px;
-  box-shadow: 0.375rem 0.375rem 0 #94E784, -rem(6px) -rem(6px) 0 #94E784, 0.375rem -rem(6px) 0 #94E784, -rem(6px) 0.375rem 0 #94E784;
-}
+  box-shadow: 0.375rem 0.375rem 0 #94E784, -rem(6px) -rem(6px) 0 #94E784, 0.375rem -rem(6px) 0 #94E784, -rem(6px) 0.375rem 0 #94E784; }
 .p-anthem-selection .p-anthem-selection__checkbox + b:hover {
-  border-color: #4B4B4B;
-}
+  border-color: #4B4B4B; }
 .p-anthem-selection .p-anthem-selection__checkbox:checked + b {
   background: #E0E0E0;
   border-color: #69DDD4;
   position: relative;
-  box-shadow: 0.375rem 0.375rem 0 #E0E0E0, -rem(6px) -rem(6px) 0 #E0E0E0, 0.375rem -rem(6px) 0 #E0E0E0, -rem(6px) 0.375rem 0 #E0E0E0;
-}
+  box-shadow: 0.375rem 0.375rem 0 #E0E0E0, -rem(6px) -rem(6px) 0 #E0E0E0, 0.375rem -rem(6px) 0 #E0E0E0, -rem(6px) 0.375rem 0 #E0E0E0; }
 .p-anthem-selection .p-anthem-selection__checkbox:checked + b:hover {
-  border-color: #2AA6A2;
-}
+  border-color: #2AA6A2; }
 .p-anthem-selection .p-anthem-selection__checkbox:checked + b:after {
   content: "";
   width: calc((1rem - 1px) / 2);
@@ -243,16 +209,13 @@ Because I do not give a damn."
   left: 0;
   top: 0;
   margin: auto;
-  border-radius: 0;
-}
+  border-radius: 0; }
 .p-anthem-selection .p-anthem-selection__checkbox:disabled + b {
   background-color: #C2C2C2;
   border: none;
-  cursor: default;
-}
+  cursor: default; }
 .p-anthem-selection .p-anthem-selection__checkbox:focus + b {
-  border-color: #69DDD4;
-}
+  border-color: #69DDD4; }
 
 @media (min-width: 728px) {
   .p-anthem-selection__right {
@@ -261,18 +224,14 @@ Because I do not give a damn."
 
   .p-anthem-selection__right-hang {
     left: calc(55% + 10px);
-  }
-}
+  } }
 @media (min-width: 1028.7px) {
   .p-anthem-selection__right-hang {
     left: calc(35% + 10px);
-  }
-}
+  } }
 .dfp_ad--held-area.dfp_ad--held-area {
   background-color: #F9F9F9;
-  border: 1px solid #C2C2C2;
-}
+  border: 1px solid #C2C2C2; }
 .dfp_ad--held-area.dfp_ad--held-area:before {
-  content: "AD";
-}
+  content: "AD"; }
 /*# sourceMappingURL=preview.fec8a65.css.map */

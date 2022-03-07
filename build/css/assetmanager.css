@@ -65,82 +65,63 @@ Because I do not give a damn."
 */
 .m-tb-0 {
   margin-top: 0 !important;
-  margin-bottom: 0 !important;
-}
+  margin-bottom: 0 !important; }
 
 .m-t-1 {
-  margin-top: 1rem !important;
-}
+  margin-top: 1rem !important; }
 
 .m-t-0 {
-  margin-top: 0 !important;
-}
+  margin-top: 0 !important; }
 
 .m-t-a {
-  margin-top: auto !important;
-}
+  margin-top: auto !important; }
 
 .m-t-5 {
-  margin-top: 0.5rem !important;
-}
+  margin-top: 0.5rem !important; }
 
 .m-b-1 {
-  margin-bottom: 1rem !important;
-}
+  margin-bottom: 1rem !important; }
 
 .m-b-5 {
-  margin-bottom: 0.5rem !important;
-}
+  margin-bottom: 0.5rem !important; }
 
 .m-b-a {
-  margin-bottom: auto !important;
-}
+  margin-bottom: auto !important; }
 
 .m-tb-1 {
   margin-top: 1rem !important;
-  margin-bottom: 1rem !important;
-}
+  margin-bottom: 1rem !important; }
 
 .m-tb-5 {
   margin-top: 0.5rem !important;
-  margin-bottom: 0.5rem !important;
-}
+  margin-bottom: 0.5rem !important; }
 
 .m-t-2 {
-  margin-top: 2rem !important;
-}
+  margin-top: 2rem !important; }
 
 .m-b-2 {
-  margin-bottom: 2rem !important;
-}
+  margin-bottom: 2rem !important; }
 
 .m-l-1 {
-  margin-left: 1rem !important;
-}
+  margin-left: 1rem !important; }
 
 .m-l-a {
-  margin-left: auto !important;
-}
+  margin-left: auto !important; }
 
 .m-l-2 {
-  margin-left: 2rem !important;
-}
+  margin-left: 2rem !important; }
 
 .m-l-5 {
-  margin-left: 0.5rem !important;
-}
+  margin-left: 0.5rem !important; }
 
 .m-r-1 {
-  margin-right: 1rem !important;
-}
+  margin-right: 1rem !important; }
 
 .m-r-5 {
-  margin-right: 0.5rem !important;
-}
+  margin-right: 0.5rem !important; }
 
 .m-r-a {
-  margin-right: auto !important;
-}
+  margin-right: auto !important; }
 
 .m-entry .ql-editor,
 .m-scorecard__field .ql-editor {
@@ -154,23 +135,19 @@ Because I do not give a damn."
        tab-size: 4;
   white-space: pre-wrap;
   padding: 1.5rem 1rem 50vh;
-  min-height: 100vh;
-}
+  min-height: 100vh; }
 .m-entry .ql-editor > *,
 .m-scorecard__field .ql-editor > * {
   margin: 0 auto;
-  max-width: 43rem;
-}
+  max-width: 43rem; }
 .text-lg .m-entry .ql-editor,
 .text-lg .m-scorecard__field .ql-editor {
   font-size: 19px;
-  line-height: 1.8;
-}
+  line-height: 1.8; }
 .text-sm .m-entry .ql-editor,
 .text-sm .m-scorecard__field .ql-editor {
   font-size: 13px;
-  line-height: 1.6;
-}
+  line-height: 1.6; }
 .m-entry .ql-editor p,
 .m-entry .ql-editor q,
 .m-entry .ql-editor blockquote,
@@ -203,45 +180,36 @@ Because I do not give a damn."
   line-height: inherit;
   list-style: inherit;
   background: none;
-  margin-bottom: 16px;
-}
+  margin-bottom: 16px; }
 .m-entry .ql-editor small,
 .m-scorecard__field .ql-editor small {
-  font-size: 13px;
-}
+  font-size: 13px; }
 .m-entry .ql-editor iframe,
 .m-scorecard__field .ql-editor iframe {
   border: none;
   max-width: 100%;
   height: 0;
-  border-radius: 3px;
-}
+  border-radius: 3px; }
 .m-entry .ql-editor iframe[data-object],
 .m-scorecard__field .ql-editor iframe[data-object] {
-  width: 100%;
-}
+  width: 100%; }
 .m-entry .ql-editor iframe.image-object, .m-entry .ql-editor iframe.gallery-object, .m-entry .ql-editor iframe.imageslider-object,
 .m-scorecard__field .ql-editor iframe.image-object,
 .m-scorecard__field .ql-editor iframe.gallery-object,
 .m-scorecard__field .ql-editor iframe.imageslider-object {
-  height: 31.25rem;
-}
+  height: 31.25rem; }
 .m-entry .ql-editor iframe.ratingcard-object,
 .m-scorecard__field .ql-editor iframe.ratingcard-object {
-  height: 8.75rem;
-}
+  height: 8.75rem; }
 .m-entry .ql-editor iframe.video-object,
 .m-scorecard__field .ql-editor iframe.video-object {
-  height: 25rem;
-}
+  height: 25rem; }
 .m-entry .ql-editor iframe.html-object,
 .m-scorecard__field .ql-editor iframe.html-object {
-  height: 12.5rem;
-}
+  height: 12.5rem; }
 .m-entry .ql-editor iframe.hr-object,
 .m-scorecard__field .ql-editor iframe.hr-object {
-  height: 1rem;
-}
+  height: 1rem; }
 @media (max-width: 40em) {
   .m-entry .ql-editor iframe[data-object]:not(.is-expanded):not(.is-subframe):not(.hr-object),
 .m-scorecard__field .ql-editor iframe[data-object]:not(.is-expanded):not(.is-subframe):not(.hr-object) {
@@ -253,61 +221,46 @@ Because I do not give a damn."
 .m-scorecard__field .ql-editor iframe.imageslider-object,
 .m-scorecard__field .ql-editor iframe.video-object {
     height: 18.75rem;
-  }
-}
+  } }
 .m-entry .ql-editor iframe::-moz-selection, .m-scorecard__field .ql-editor iframe::-moz-selection {
   background: inherit;
-  color: inherit;
-}
+  color: inherit; }
 .m-entry .ql-editor iframe::selection,
 .m-scorecard__field .ql-editor iframe::selection {
   background: inherit;
-  color: inherit;
-}
+  color: inherit; }
 
 .ql-editor strong {
-  font-weight: 600;
-}
+  font-weight: 600; }
 .ql-editor em {
   font-weight: 400;
-  font-style: italic;
-}
+  font-style: italic; }
 .ql-editor strong em, .ql-editor em strong {
   font-weight: 600;
-  font-style: italic;
-}
+  font-style: italic; }
 
 .m-entry .ql-editor h1, .m-entry .ql-editor h2, .m-entry .ql-editor h3, .m-entry .ql-editor h4, .m-entry .ql-editor h5 {
-  line-height: 1.25;
-}
+  line-height: 1.25; }
 .m-entry .ql-editor h4, .m-entry .ql-editor h5 {
-  font-weight: 500;
-}
+  font-weight: 500; }
 .m-entry .ql-editor h4 strong, .m-entry .ql-editor h5 strong {
-  font-weight: 600;
-}
+  font-weight: 600; }
 .m-entry .ql-editor h1 {
-  font-size: 26px;
-}
+  font-size: 26px; }
 .m-entry .ql-editor h2 {
-  font-size: 22px;
-}
+  font-size: 22px; }
 .m-entry .ql-editor h3 {
-  font-size: 19px;
-}
+  font-size: 19px; }
 .m-entry .ql-editor h4 {
-  font-size: 15px;
-}
+  font-size: 15px; }
 .m-entry .ql-editor h5 {
-  font-size: 13px;
-}
+  font-size: 13px; }
 
 .m-entry .ql-editor a,
 .m-quill-input p > a,
 .m-scorecard__field .ql-editor p > a {
   color: inherit;
-  text-decoration: none;
-}
+  text-decoration: none; }
 .m-entry .ql-editor a:link,
 .m-entry .ql-editor a:active,
 .m-entry .ql-editor a:visited,
@@ -321,8 +274,7 @@ Because I do not give a damn."
 .m-scorecard__field .ql-editor p > a:visited,
 .m-scorecard__field .ql-editor p > [data-autolink-id] {
   color: #0057B3;
-  text-decoration: underline;
-}
+  text-decoration: underline; }
 .m-entry .ql-editor a:hover, .m-entry .ql-editor a:focus,
 .m-entry .ql-editor [data-autolink-id]:hover,
 .m-entry .ql-editor [data-autolink-id]:focus,
@@ -334,145 +286,112 @@ Because I do not give a damn."
 .m-scorecard__field .ql-editor p > a:focus,
 .m-scorecard__field .ql-editor p > [data-autolink-id]:hover,
 .m-scorecard__field .ql-editor p > [data-autolink-id]:focus {
-  color: #003e80;
-}
+  color: #003e80; }
 .m-entry .ql-editor [data-autolink-id][data-autolink-disabled],
 .m-quill-input p > [data-autolink-id][data-autolink-disabled],
 .m-scorecard__field .ql-editor p > [data-autolink-id][data-autolink-disabled] {
   text-decoration: none;
   cursor: inherit;
-  color: inherit;
-}
+  color: inherit; }
 
 .m-entry .ql-editor ol,
 .m-entry .ql-editor ul,
 .m-scorecard__field .ql-editor ol,
 .m-scorecard__field .ql-editor ul {
-  list-style-position: inside;
-}
+  list-style-position: inside; }
 @media (min-width: 60em) {
   .m-entry .ql-editor ol,
 .m-entry .ql-editor ul,
 .m-scorecard__field .ql-editor ol,
 .m-scorecard__field .ql-editor ul {
     list-style-position: outside;
-  }
-}
+  } }
 .m-entry .ql-editor ul,
 .m-scorecard__field .ql-editor ul {
-  list-style-type: disc;
-}
+  list-style-type: disc; }
 .m-entry .ql-editor ol,
 .m-scorecard__field .ql-editor ol {
-  list-style-type: decimal;
-}
+  list-style-type: decimal; }
 .m-entry .ql-editor li,
 .m-scorecard__field .ql-editor li {
-  margin-bottom: 5.3333333333px;
-}
+  margin-bottom: 5.3333333333px; }
 
 .m-entry .ql-editor ins {
   color: #008000;
   background: rgba(217, 239, 168, 0.2);
-  text-decoration: none;
-}
+  text-decoration: none; }
 .m-entry .ql-editor ins a:link {
-  color: #006700;
-}
+  color: #006700; }
 .m-entry .ql-editor ins iframe[data-object] {
   box-shadow: 0 0 0 2px #008000;
   padding: 0;
-  margin-left: 3px;
-}
+  margin-left: 3px; }
 .m-entry .ql-editor del,
 .m-entry .ql-editor s {
-  text-decoration: line-through;
-}
+  text-decoration: line-through; }
 .m-entry .ql-editor del iframe[data-object],
 .m-entry .ql-editor s iframe[data-object] {
   box-shadow: inset 0 0 0 2px #737373;
   opacity: 0.33;
   padding: 0;
-  margin-left: 3px;
-}
+  margin-left: 3px; }
 .m-entry .ql-editor del {
-  color: #737373;
-}
+  color: #737373; }
 .m-entry .ql-editor s {
-  color: #4B4B4B;
-}
+  color: #4B4B4B; }
 .m-entry .ql-editor mark {
   background-color: rgba(255, 152, 214, 0.5);
-  color: rgba(0, 0, 0, 0.5);
-}
+  color: rgba(0, 0, 0, 0.5); }
 .m-entry .ql-editor mark:first-of-type {
-  padding-left: 6px;
-}
+  padding-left: 6px; }
 .m-entry .ql-editor mark:last-of-type {
-  padding-right: 6px;
-}
+  padding-right: 6px; }
 .m-entry .ql-editor mark ~ * > mark {
-  padding: 0;
-}
+  padding: 0; }
 .m-entry .ql-editor mark.is-active {
-  background-color: #FDCB28;
-}
+  background-color: #FDCB28; }
 .m-entry .ql-editor ins mark {
-  border-bottom: 2px solid #008000;
-}
+  border-bottom: 2px solid #008000; }
 .m-entry .ql-editor mark del,
 .m-entry .ql-editor del mark {
   color: rgba(0, 0, 0, 0.5);
-  border-bottom: 2px solid #737373;
-}
+  border-bottom: 2px solid #737373; }
 .m-entry .ql-editor mark del {
-  margin: 0 -6px;
-}
+  margin: 0 -6px; }
 
 .ql-editor a:link del,
 .ql-editor a:link s {
-  color: #666666;
-}
+  color: #666666; }
 
 .m-entry .ql-editor blockquote {
   padding-left: 1em;
   border-left: 0.25em solid #EEEEEE;
-  color: #777777;
-}
+  color: #777777; }
 
 .m-entry .ql-editor .soft-break, .m-entry .ql-editor [data-br] {
-  margin-bottom: 0;
-}
+  margin-bottom: 0; }
 .m-entry .ql-editor .soft-break br, .m-entry .ql-editor [data-br] br {
-  display: none;
-}
+  display: none; }
 .m-entry .ql-editor .soft-break:after, .m-entry .ql-editor [data-br]:after {
   content: " ↩";
   font-size: 13px;
-  color: #C2C2C2;
-}
+  color: #C2C2C2; }
 .m-entry .ql-editor li.soft-break + li, .m-entry .ql-editor li[data-br] + li {
-  list-style-type: none;
-}
+  list-style-type: none; }
 
 .m-mapstack__point .m-field--textarea .ql-editor .soft-break, .m-mapstack__point .m-field--textarea .ql-editor [data-br] {
-  margin-bottom: 0;
-}
+  margin-bottom: 0; }
 .m-mapstack__point .m-field--textarea .ql-editor .soft-break br, .m-mapstack__point .m-field--textarea .ql-editor [data-br] br {
-  display: none;
-}
+  display: none; }
 .m-mapstack__point .m-field--textarea .ql-editor .soft-break:after, .m-mapstack__point .m-field--textarea .ql-editor [data-br]:after {
   content: " ↩";
   font-size: 13px;
-  color: #C2C2C2;
-}
+  color: #C2C2C2; }
 .m-mapstack__point .m-field--textarea .ql-editor li.soft-break + li, .m-mapstack__point .m-field--textarea .ql-editor li[data-br] + li {
-  list-style-type: none;
-}
+  list-style-type: none; }
 
 .m-nav--assets {
-  height: 100%;
-}
+  height: 100%; }
 
 .m-assets {
   max-width: unset;
@@ -480,46 +399,37 @@ Because I do not give a damn."
   margin-right: unset;
   padding: 32px;
   position: relative;
-  min-height: 100vh;
-}
+  min-height: 100vh; }
 .m-assets .m-assets__header {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  margin: 0 0 32px;
-}
+  margin: 0 0 32px; }
 .m-assets .m-assets__header .m-assets__header-search {
   flex-grow: 1;
   display: block;
   width: auto;
-  margin: 0 32px 0 0;
-}
+  margin: 0 32px 0 0; }
 @media (max-width: 60em) {
   .m-assets .m-assets__header .m-assets__header-search {
     flex-basis: 100%;
     margin: 0 0 16px;
-  }
-}
+  } }
 .m-assets .m-assets__header .m-assets__header__buttons {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-}
+  align-items: center; }
 .m-assets .m-assets__header .m-assets__header__buttons .m-assets__header-uploads.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim {
   margin-top: 24px;
-  margin-right: 32px;
-}
+  margin-right: 32px; }
 .m-assets .m-assets__header .m-assets__header__buttons .m-assets__header-select.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim {
-  margin-right: 32px;
-}
+  margin-right: 32px; }
 .m-assets .m-assets__header .m-assets__header__buttons .res-toggle-buttons.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim {
-  margin-top: 24px;
-}
+  margin-top: 24px; }
 @media (max-width: 800px) {
   .m-assets .m-assets__header .m-assets__header__buttons .res-toggle-buttons.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim {
     display: none;
-  }
-}
+  } }
 @media (max-width: 60em) {
   .m-assets .m-assets__header .m-assets__header__buttons {
     width: 100%;
@@ -540,8 +450,7 @@ Because I do not give a damn."
   }
   .m-assets .m-assets__header .m-assets__header__buttons .res-toggle-buttons.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim {
     margin-top: unset;
-  }
-}
+  } }
 @media (max-width: 40em) {
   .m-assets .m-assets__header .m-assets__header__buttons {
     flex-direction: column;
@@ -552,34 +461,28 @@ Because I do not give a damn."
 .m-assets .m-assets__header .m-assets__header__buttons .m-assets__header-select.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim,
 .m-assets .m-assets__header .m-assets__header__buttons .m-assets__header-button.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim {
     margin-bottom: 16px;
-  }
-}
+  } }
 .m-assets .m-assets__sub-head {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 32px;
-}
+  margin-bottom: 32px; }
 .m-assets .m-assets__table.res-table.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim .res-table__wrap,
 .m-assets .m-assets__table.res-table.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim .res-table__table {
   table-layout: fixed;
-  width: 100%;
-}
+  width: 100%; }
 .m-assets .m-assets__table.res-table.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim .res-table__wrap::-webkit-scrollbar,
 .m-assets .m-assets__table.res-table.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim .res-table__table::-webkit-scrollbar {
-  display: none;
-}
+  display: none; }
 @media (min-width: 800px) and (max-width: 1200px) {
   .m-assets .m-assets__table.res-table.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim .res-table__table {
     table-layout: unset;
-  }
-}
+  } }
 .m-assets .m-assets__table.res-table.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim .m-assets__table__header-image,
 .m-assets .m-assets__table.res-table.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim .m-assets__table__image {
   width: 196px;
   min-width: 196px;
-  max-width: 196px;
-}
+  max-width: 196px; }
 .m-assets .m-assets__table.res-table.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim .m-assets__table__table-image,
 .m-assets .m-assets__table.res-table.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim .m-assets__table__table-file {
   background-color: #E0E0E0;
@@ -587,30 +490,24 @@ Because I do not give a damn."
   height: 107px;
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: center;
-}
+  background-position: center; }
 .m-assets .m-assets__table.res-table.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim .m-assets__table__table-file {
   display: flex;
   justify-content: center;
-  align-items: center;
-}
+  align-items: center; }
 .m-assets .m-assets__table.res-table.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim .m-assets__table__filename:hover {
   color: #0057B3;
   text-decoration: underline;
-  cursor: pointer;
-}
+  cursor: pointer; }
 .m-assets .m-assets__table.res-table.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim .m-assets__assets-edited {
   transition: border 0.3s ease;
-  border: 2px solid #69DDD4;
-}
+  border: 2px solid #69DDD4; }
 .m-assets .m-assets__table.res-table.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim .m-assets__table__header-updated-at,
 .m-assets .m-assets__table.res-table.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim .m-assets__table__updated-at {
-  width: 150px;
-}
+  width: 150px; }
 .m-assets .m-assets__table.res-table.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim .m-assets__table__header-credit,
 .m-assets .m-assets__table.res-table.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim .m-assets__table__header-tags {
-  min-width: 150px;
-}
+  min-width: 150px; }
 .m-assets .m-assets__table.res-table.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim .m-assets__table__header-filename,
 .m-assets .m-assets__table.res-table.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim .m-assets__table__filename,
 .m-assets .m-assets__table.res-table.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim .m-assets__table__header-credit,
@@ -622,28 +519,23 @@ Because I do not give a damn."
   word-break: break-all;
   -webkit-hyphens: auto;
       -ms-hyphens: auto;
-          hyphens: auto;
-}
+          hyphens: auto; }
 .m-assets .m-assets__table.res-table.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim .m-assets__table__filename {
-  min-width: 10em;
-}
+  min-width: 10em; }
 .m-assets .m-assets__table.res-table.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim .m-assets__table__header-copy-url,
 .m-assets .m-assets__table.res-table.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim .m-assets__table__copy-url {
   width: 72px;
-  cursor: pointer;
-}
+  cursor: pointer; }
 .m-assets .m-assets__table.res-table.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim .m-assets__table__header-action,
 .m-assets .m-assets__table.res-table.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim .m-assets__table__action {
-  width: 60px;
-}
+  width: 60px; }
 @media (min-width: 800px) and (max-width: 1200px) {
   .m-assets .m-assets__table.res-table.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim .m-assets__table__header-copy-url,
 .m-assets .m-assets__table.res-table.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim .m-assets__table__copy-url,
 .m-assets .m-assets__table.res-table.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim .m-assets__table__header-credit,
 .m-assets .m-assets__table.res-table.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim .m-assets__table__credit {
     display: none;
-  }
-}
+  } }
 @media (max-width: 800px) {
   .m-assets .m-assets__table.res-table.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim .res-table__table tbody tr {
     padding: 0;
@@ -694,73 +586,60 @@ Because I do not give a damn."
   .m-assets .m-assets__table.res-table.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim .m-assets__table__header-copy-url,
 .m-assets .m-assets__table.res-table.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim.res-shim .m-assets__table__copy-url {
     display: none;
-  }
-}
+  } }
 .m-assets .m-assets__cards {
   width: 100%;
   margin: auto;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
-}
+  justify-content: space-between; }
 .m-assets .m-assets__cards .m-assets__cards__card {
   width: 100%;
   border: 1px solid #C2C2C2;
-  margin: 0 0 20px 0;
-}
+  margin: 0 0 20px 0; }
 @media (min-width: 600px) {
   .m-assets .m-assets__cards .m-assets__cards__card {
     width: 47%;
-  }
-}
+  } }
 @media (min-width: 900px) {
   .m-assets .m-assets__cards .m-assets__cards__card {
     width: 22%;
-  }
-}
+  } }
 @media (min-width: 1200px) {
   .m-assets .m-assets__cards .m-assets__cards__card {
     width: 18%;
-  }
-}
+  } }
 @media (min-width: 1600px) {
   .m-assets .m-assets__cards .m-assets__cards__card {
     width: 19%;
-  }
-}
+  } }
 @media (min-width: 1800px) {
   .m-assets .m-assets__cards .m-assets__cards__card {
     width: 18%;
-  }
-}
+  } }
 .m-assets .m-assets__cards .m-assets__cards__card.is-leaving {
   background-color: #F9F9F9;
-  opacity: 0.4;
-}
+  opacity: 0.4; }
 .m-assets .m-assets__cards .m-assets__assets-edited {
   transition: border 0.3s ease;
-  border: 2px solid #69DDD4;
-}
+  border: 2px solid #69DDD4; }
 .m-assets .m-assets__cards .m-assets__cards__card-image {
   background-color: #EEEEEE;
   width: 100%;
   height: 180px;
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: center;
-}
+  background-position: center; }
 .m-assets .m-assets__cards .m-assets__cards__card-info {
   padding: 0 12px;
   margin-top: 12px;
-  -webkit-font-smoothing: antialiased;
-}
+  -webkit-font-smoothing: antialiased; }
 .m-assets .m-assets__cards .m-assets__cards__card-label {
   font-size: 11px;
   font-weight: 400;
   color: #737373;
   margin-bottom: 4px;
-  -webkit-font-smoothing: antialiased;
-}
+  -webkit-font-smoothing: antialiased; }
 .m-assets .m-assets__cards .m-assets__cards__card-text {
   overflow-wrap: break-word;
   word-break: break-all;
@@ -773,27 +652,21 @@ Because I do not give a damn."
   color: #4B4B4B;
   margin-bottom: 16px;
   font-feature-settings: normal;
-  font-weight: 400;
-}
+  font-weight: 400; }
 .m-assets .m-assets__cards .m-assets__cards__card-filename:hover {
   color: #0057B3;
   text-decoration: underline;
-  cursor: pointer;
-}
+  cursor: pointer; }
 .m-assets .m-assets__cards .m-assets__cards__card-action {
-  margin-bottom: 16px;
-}
+  margin-bottom: 16px; }
 .m-assets .m-assets__pointer {
-  cursor: pointer;
-}
+  cursor: pointer; }
 .m-assets .m-assets__image {
   display: flex;
   justify-content: center;
-  align-items: center;
-}
+  align-items: center; }
 .m-assets .m-assets__footer__pagination {
-  margin: auto;
-}
+  margin: auto; }
 
 /*
  Styles for app drawer
@@ -809,41 +682,34 @@ Because I do not give a damn."
   box-sizing: border-box;
   height: 100%;
   box-shadow: -3px 0px 4px rgba(0, 0, 0, 0.0594995);
-  transition: all 0.5s ease-in-out;
-}
+  transition: all 0.5s ease-in-out; }
 
 .m-assets__drawer-open {
-  right: 0;
-}
+  right: 0; }
 
 .m-assets__drawer-title {
   margin-top: 12px;
   margin-bottom: 12px;
   font-weight: 500;
-  color: #737373;
-}
+  color: #737373; }
 
 .m-assets__drawer-option {
   margin-top: 24px;
   margin-bottom: 24px;
   font-weight: 500;
-  color: #737373;
-}
+  color: #737373; }
 
 .m-assets__drawer-file-upload {
-  display: none;
-}
+  display: none; }
 
 .m-assets__drawer-helper-text {
   margin-top: 12px;
   color: #737373;
   font-size: 13px;
-  line-height: 1.5;
-}
+  line-height: 1.5; }
 
 .m-assets__drawer-submit-button {
-  margin-bottom: 40px;
-}
+  margin-bottom: 40px; }
 
 .m-assets__drawer-image {
   background-color: #E0E0E0;
@@ -852,6 +718,5 @@ Because I do not give a damn."
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  margin-bottom: 20px;
-}
+  margin-bottom: 20px; }
 /*# sourceMappingURL=assetmanager.f96e02c.css.map */
