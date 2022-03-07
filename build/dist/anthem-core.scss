@@ -1,0 +1,1497 @@
+// Source: node_modules/resonance/dist/_resonance-vars.scss
+//
+// every variable, mixin, and function in this file will be compiled and
+// made available via dist/_resonance-vars.scss
+//
+// only use this file for things that need to be shared outside of the
+// resonance environment, and could prove beneficial to consumers
+//
+
+$res-shim-class: ".res-shim";
+$res-shim-repeat: 10;
+$res-inner-reset-class: ".res-style-reset-inner";
+$res-outer-reset-class: ".res-style-reset-outer";
+$res-font-stack: "graphik", system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", Helvetica, "Lucida Grande", Arial, sans-serif;
+
+// used to automatically pierce the specificity hack
+// ex: #{res-shim(res-icon)} or #{res-shim(".my-class")}
+@function res-shim($class) {
+  $shim-string: "";
+  @for $i from 1 through $res-shim-repeat {
+    $shim-string: str-insert($shim-string, $res-shim-class, 0);
+  }
+  @return selector-append($class, $shim-string);
+}
+
+// breakpoints
+$res-bp-mobile: 600px;
+$res-bp-tablet: 900px;
+$res-bp-desktop: 1200px;
+$res-bp-widescreen: 1800px;
+$res-bp-map: (
+  mobile: $res-bp-mobile,
+  tablet: $res-bp-tablet,
+  desktop: $res-bp-desktop,
+  widescreen: $res-bp-widescreen
+);
+// mixin for breakpoints
+// sizes = [mobile, tablet, desktop, widescreen]
+// ranges = [up, down, only]
+// ex: @include res-breakpoint(mobile, only) { ... }
+@mixin res-breakpoint($size, $range) {
+  // set $_res-bp-up and $_res-bp-down based on size
+  @if $size == mobile {
+    $_res-bp-up: "min-width: 0" !global;
+    $_res-bp-down: #{"max-width: " + ($res-bp-mobile - 1)} !global;
+  } @else if $size == tablet {
+    $_res-bp-up: #{"min-width: " + $res-bp-mobile} !global;
+    $_res-bp-down: #{"max-width: " + ($res-bp-tablet - 1)} !global;
+  } @else if $size == desktop {
+    $_res-bp-up: #{"min-width: " + $res-bp-tablet} !global;
+    $_res-bp-down: #{"max-width: " + ($res-bp-desktop - 1)} !global;
+  } @else if $size == widescreen {
+    $_res-bp-up: #{"min-width: " + $res-bp-desktop} !global;
+    $_res-bp-down: #{"max-width: " + ($res-bp-widescreen * 3)} !global;
+  }
+  // render @media query based on range
+  @if $range == up {
+    @media ($_res-bp-up) { @content; }
+  } @else if $range == down {
+    @media ($_res-bp-down) { @content; }
+  } @else {
+    @media ($_res-bp-up) and ($_res-bp-down) { @content; }
+  }
+}
+
+$res-input-border-radius: 2px;
+$res-button-border-radius: 5px;
+
+//
+// the variables below are auto-generated from src/lib/config.json
+//
+$res-color-sky-100: #F7FCFF;
+$res-color-sky-200: #E2F2FD;
+$res-color-sky-300: #C0DDFF;
+$res-color-sky-400: #89BFFF;
+$res-color-sky-500: #3463F9;
+$res-color-sky-600: #0057B3;
+$res-color-sky-700: #003E65;
+$res-color-sky-map: (100: #F7FCFF, 200: #E2F2FD, 300: #C0DDFF, 400: #89BFFF, 500: #3463F9, 600: #0057B3, 700: #003E65);
+$res-color-jade-100: #F1FFFF;
+$res-color-jade-200: #C9FCF8;
+$res-color-jade-300: #A3F4EE;
+$res-color-jade-400: #69DDD4;
+$res-color-jade-500: #2AA6A2;
+$res-color-jade-600: #1C7A77;
+$res-color-jade-700: #0B5050;
+$res-color-jade-map: (100: #F1FFFF, 200: #C9FCF8, 300: #A3F4EE, 400: #69DDD4, 500: #2AA6A2, 600: #1C7A77, 700: #0B5050);
+$res-color-rose-100: #FFF7FC;
+$res-color-rose-200: #FFF0F9;
+$res-color-rose-300: #FCD2EB;
+$res-color-rose-400: #FF98D6;
+$res-color-rose-500: #FC47B4;
+$res-color-rose-600: #D11987;
+$res-color-rose-700: #A91B70;
+$res-color-rose-map: (100: #FFF7FC, 200: #FFF0F9, 300: #FCD2EB, 400: #FF98D6, 500: #FC47B4, 600: #D11987, 700: #A91B70);
+$res-color-gold-100: #FFFDF5;
+$res-color-gold-200: #FFF2BF;
+$res-color-gold-300: #FFE068;
+$res-color-gold-400: #FDCB28;
+$res-color-gold-500: #BF8A11;
+$res-color-gold-600: #91680B;
+$res-color-gold-700: #6C560E;
+$res-color-gold-map: (100: #FFFDF5, 200: #FFF2BF, 300: #FFE068, 400: #FDCB28, 500: #BF8A11, 600: #91680B, 700: #6C560E);
+$res-color-gray-100: #F9F9F9;
+$res-color-gray-200: #EEEEEE;
+$res-color-gray-300: #E0E0E0;
+$res-color-gray-400: #C2C2C2;
+$res-color-gray-500: #737373;
+$res-color-gray-600: #4B4B4B;
+$res-color-gray-700: #2B2B2B;
+$res-color-gray-map: (100: #F9F9F9, 200: #EEEEEE, 300: #E0E0E0, 400: #C2C2C2, 500: #737373, 600: #4B4B4B, 700: #2B2B2B);
+$res-color-apple-100: #FBEBE7;
+$res-color-apple-300: #F38167;
+$res-color-apple-500: #D42100;
+$res-color-apple-map: (100: #FBEBE7, 300: #F38167, 500: #D42100);
+$res-color-grass-100: #E2FFDC;
+$res-color-grass-300: #94E784;
+$res-color-grass-500: #008000;
+$res-color-grass-map: (100: #E2FFDC, 300: #94E784, 500: #008000);
+
+$res-font-scale-5: 38px;
+$res-font-scale-4: 30px;
+$res-font-scale-3: 26px;
+$res-font-scale-2: 22px;
+$res-font-scale-1: 19px;
+$res-font-scale-0: 15px;
+$res-font-scale--1: 13px;
+$res-font-scale--2: 11px;
+$res-font-scale--3: 9.5px;
+$res-font-scale--4: 7.5px;
+$res-font-scale--5: 6.5px;
+$res-font-scale-map: (5: 38px, 4: 30px, 3: 26px, 2: 22px, 1: 19px, 0: 15px, -1: 13px, -2: 11px, -3: 9.5px, -4: 7.5px, -5: 6.5px);
+
+$res-space-scale-0: 2px;
+$res-space-scale-1: 4px;
+$res-space-scale-2: 8px;
+$res-space-scale-3: 12px;
+$res-space-scale-4: 16px;
+$res-space-scale-5: 24px;
+$res-space-scale-6: 32px;
+$res-space-scale-7: 44px;
+$res-space-scale-8: 60px;
+$res-space-scale-9: 84px;
+$res-space-scale-map: (0: 2px, 1: 4px, 2: 8px, 3: 12px, 4: 16px, 5: 24px, 6: 32px, 7: 44px, 8: 60px, 9: 84px);
+// Source: assets/css/_settings.scss
+// COLORS
+
+// State colors, but like, the 'on/off' kind of state, not the governmental kind?
+$positive-color:    #A2D46F;
+$negative-color:    #D91E18;
+$cautionary-color:  #F1B018;
+
+// State colors, the governmental kind
+$us-web-standards-primary: #0071bc;
+$french-flag-red: #ED2E38;
+$malaysian-flag-yellow: #ffcc00;
+
+// Goth colors
+$soulblack: #333333;
+
+// Mauvenders
+$mauvender: #DFB0FF;
+
+// ------------------------
+// TYPOGRAPHY
+
+$line-height: 1.5;
+
+// ------------------------
+// BREAKPOINTS
+
+$break-small:       30em;
+$break-medium:      40em;
+$break-medium-large: 50em;
+$break-large:       60em;
+$break-xlarge:      80em;
+$break-mobile: $break-medium;
+$break-nav-alt: 71em;
+$crop-tool-bp: 42em;
+// Tablet breakpoints for dashboard
+$break-large-dashboard: 70em;
+
+// ------------------------
+// DIMENSIONS
+
+// Height of top bar/s
+$toolbar-height:    35px;
+// General layout widths
+$content-width:     51.75rem;
+$inner-content-width: 43rem;
+// Default border radius for buttons etc
+$border-radius:     3px;
+// Height of dash navbar
+$dash-navbar-height: 49px;
+// Height of navbar for editor pages
+$editor-navbar-height: 72px;
+
+$mobile-navbar-height: 45px;
+// Dashboard search panel
+$search-panel-width: 360px;
+$search-toggle-width: 40px;
+$search-footer-height: 100px;
+
+
+// ------------------------
+// ANIMATION SPEED
+$ui-speed:          .2s;
+
+
+// ------------------------
+// DEBUG MODE
+
+// enables a breakpoint display;
+$debug: false;
+
+// Source: assets/css/support/_colors.scss
+$_colors: (
+  positive: $res-color-grass-300,
+  negative: $res-color-apple-300,
+  cautionary: $res-color-gold-400,
+  disabled: $res-color-gray-400
+);
+
+// this is a shim to populate resonance color variables into the
+// color() function used throughout anthem. it should be noted that
+// if a color is added or removed from the resonance variables, it
+// will have to be mirrored here as well (or until sass supports
+// variable interpolation)
+//
+// further discussion here:
+// https://github.com/voxmedia/anthem/pull/5090#discussion_r145829570
+$_res-colors: (
+  res-sky: (
+    100: $res-color-sky-100,
+    200: $res-color-sky-200,
+    300: $res-color-sky-300,
+    400: $res-color-sky-400,
+    500: $res-color-sky-500,
+    600: $res-color-sky-600,
+    700: $res-color-sky-700
+  ),
+  res-jade: (
+    100: $res-color-jade-100,
+    200: $res-color-jade-200,
+    300: $res-color-jade-300,
+    400: $res-color-jade-400,
+    500: $res-color-jade-500,
+    600: $res-color-jade-600,
+    700: $res-color-jade-700
+  ),
+  res-rose: (
+    100: $res-color-rose-100,
+    200: $res-color-rose-200,
+    300: $res-color-rose-300,
+    400: $res-color-rose-400,
+    500: $res-color-rose-500,
+    600: $res-color-rose-600,
+    700: $res-color-rose-700
+  ),
+  res-gold: (
+    100: $res-color-gold-100,
+    200: $res-color-gold-200,
+    300: $res-color-gold-300,
+    400: $res-color-gold-400,
+    500: $res-color-gold-500,
+    600: $res-color-gold-600,
+    700: $res-color-gold-700
+  ),
+  res-gray: (
+    100: $res-color-gray-100,
+    200: $res-color-gray-200,
+    300: $res-color-gray-300,
+    400: $res-color-gray-400,
+    500: $res-color-gray-500,
+    600: $res-color-gray-600,
+    700: $res-color-gray-700
+  ),
+  res-apple: (
+    100: $res-color-apple-100,
+    300: $res-color-apple-300,
+    500: $res-color-apple-500
+  ),
+  res-grass: (
+    100: $res-color-grass-100,
+    300: $res-color-grass-300,
+    500: $res-color-grass-500
+  )
+);
+
+@function color($color, $tint: false) {
+  @if str-slice($color + '', 1, 3) == 'res' {
+    @if $tint {
+      @return map-get(map-get($_res-colors, $color), $tint);
+    }
+    @else {
+      @error 'color() function requires explicit tint value when referencing Resonance colors';
+    }
+  }
+  @else {
+    @return map-get($_colors, $color);
+  }
+}
+
+// Source: assets/css/support/_debug-media.scss
+@function make-debug-bg($bps) {
+  $bplist: to right, rgba(tomato, .5) 0px;
+  @for $i from 1 through length($breakpoints) {
+    $bplist: append($bplist, (rgba(tomato, .5) nth($breakpoints, $i), purple, rgba(tomato, .5) (nth($breakpoints, $i) + .1rem)));
+  }
+  @return $bplist;
+}
+
+@if $debug == true {
+  body:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    text-align: left;
+    font-size: font-size(-1);
+    padding-left: .25rem;
+
+    $breakpoints: 30rem, 40rem, 50rem, 60rem, 71rem, 80rem;
+    background: linear-gradient(make-debug-bg($breakpoints));
+  }
+}
+
+// Source: assets/css/support/_font-size.scss
+@function font-size($scale) {
+  $value: map-get($res-font-scale-map, $scale);
+  $keys: map-keys($res-font-scale-map);
+  @if $value {
+    @return $value;
+  }
+  @else {
+    @error "Invalid size reference in font-size() function; #{$scale} is not a number between #{nth($keys, 1)} and #{nth($keys, length($keys))}";
+  }
+}
+
+// Source: assets/css/support/_font.scss
+$res-font-weights: (
+  regular: 400,
+  medium: 500,
+  semibold: 600
+);
+
+@mixin font($weight, $style: false) {
+  @if(map-has-key($res-font-weights, $weight)) {
+    font-weight: map-get($res-font-weights, $weight);
+    @if($style) {
+      font-style: $style;
+    }
+  } @else {
+    @error("Font weight doesn't exist!")
+  }
+}
+
+// Source: assets/css/support/_margins.scss
+.m-tb-0 {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.m-t-1 {
+  margin-top: 1rem !important;
+}
+
+.m-t-0 {
+  margin-top: 0 !important;
+}
+
+.m-t-a {
+  margin-top: auto !important;
+}
+
+.m-t-5 {
+  margin-top: .5rem !important;
+}
+
+.m-b-1 {
+  margin-bottom: 1rem !important;
+}
+
+.m-b-5 {
+  margin-bottom: .5rem !important;
+}
+
+.m-b-a {
+  margin-bottom: auto !important;
+}
+
+.m-tb-1 {
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.m-tb-5 {
+  margin-top: .5rem !important;
+  margin-bottom: .5rem !important;
+}
+
+.m-t-2 {
+  margin-top: 2rem !important;
+}
+
+.m-b-2 {
+  margin-bottom: 2rem !important;
+}
+
+.m-l-1 {
+  margin-left: 1rem !important;
+}
+
+.m-l-a {
+  margin-left: auto !important;
+}
+
+.m-l-2 {
+  margin-left: 2rem !important;
+}
+.m-l-5 {
+  margin-left: .5rem !important;
+}
+
+.m-r-1 {
+  margin-right: 1rem !important;
+}
+
+.m-r-5 {
+  margin-right: .5rem !important;
+}
+
+.m-r-a {
+  margin-right: auto !important;
+}
+
+// Source: assets/css/support/_moz.scss
+@mixin moz {
+  @supports (-moz-appearance: meterbar) {
+    @content;
+  }
+}
+
+// Source: assets/css/support/_msedge.scss
+@mixin msedge {
+  @supports (-ms-ime-align: auto) {
+    @content;
+  }
+}
+
+// Source: assets/css/support/_rem.scss
+@function rem($px, $base: 16) {
+  // if it's already a px value, convert to unitless number
+  @if (unit($px) == 'px') {
+    $px: $px / 1px;
+  }
+  // if it's not an integer it's gonna create subpixel values
+  @if ($px % 1 == 0) {
+    $divided: $px / $base;
+    $px: $divided * 1rem;
+  } @else {
+    // so just outright stop that from happening at compilation
+    @error 'rem function must take a whole number'
+  }
+  @return $px;
+}
+
+
+@function em($px, $base: 16) {
+  // if it's already a px value, convert to unitless number
+  @if (unit($px) == 'px') {
+    $px: $px / 1px;
+  }
+  // if it's not an integer it's gonna create subpixel values
+  @if ($px % 1 == 0) {
+    $divided: $px / $base;
+    $px: $divided * 1em;
+  } @else {
+    // so just outright stop that from happening at compilation
+    @error 'em function must take a whole number'
+  }
+  @return $px;
+}
+
+// Source: assets/css/support/_safari.scss
+// Selector for Safari 7+
+$safari:  '_::-webkit-full-page-media, _:future, :root';
+
+@mixin safari {
+  @at-root #{$safari} & {
+    @content;
+  }
+}
+
+// Source: assets/css/support/_spacing.scss
+@function spacing($scale) {
+  $value: map-get($res-space-scale-map, $scale);
+  $keys: map-keys($res-space-scale-map);
+  @if $value {
+    @return $value;
+  }
+  @else {
+    @error "Invalid size reference in spacing() function; #{$scale} is not a number between #{nth($keys, 1)} and #{nth($keys, length($keys))}";
+  }
+}
+
+// Source: assets/css/support/_tint.scss
+@function tint($color, $amt) {
+  @return mix(white, $color, $amt);
+}
+
+// Source: assets/css/support/_toPx.scss
+@function toPx($size, $base: 16px) {
+  @return ($size / 1em) * $base;
+}
+
+// Source: assets/css/support/_z-index.scss
+@function z($mils, $digit: 0) {
+  @if type-of($mils) != 'number' {
+    @error 'The $mils parameter for z(), "#{$mils}", must be a number';
+  }
+  @else if type-of($digit) != 'number' {
+    @error 'The $digit parameter for z(), "#{$digit}", must be a number';
+  }
+  @else if ($mils % 1 != 0) or ($digit % 1 != 0) {
+    @error 'A non-integer value was passed into z(). Rounding.';
+    @return (round($mils) * 1000000) + round($digit);
+  }
+  @else {
+    @return ($mils * 1000000) + $digit;
+  }
+}
+
+
+// Source: assets/css/base/_body.scss
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+html.scroll-lock {
+  position: fixed;
+}
+
+body {
+  font-family: $res-font-stack;
+  font-size: font-size(0);
+  font-feature-settings: "ss05";
+  color: color(res-gray, 600);
+  overflow: auto;
+}
+
+body.is-editable {
+  background: color(res-gray, 100);
+}
+
+// Source: assets/css/base/_figure.scss
+figure {
+  margin: .85em 0 0;
+  font-size: font-size(-1);
+  background-color: color(res-gray, 400);
+}
+
+// Source: assets/css/base/_forms.scss
+form {
+  display: table;
+  width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+  background: none;
+  color: inherit;
+  appearance: none;
+  border: 0;
+  padding: 0;
+}
+
+label,
+.label {
+  @include font(regular);
+  color: color(res-gray, 500);
+  + label {
+    margin-top: 1rem;
+  }
+  .is-horizontal & {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  &.-small {
+    font-size: font-size(-1);
+  }
+  &.-pointer {
+    cursor: pointer;
+  }
+}
+
+[type='text'],
+textarea {
+  padding: .5em .5em .5em 0;
+  display: block;
+  width: 100%;
+  font-size: font-size(0);
+  line-height: 1.3;
+  &:focus {
+    border-color: color(res-jade, 500);
+  }
+  &.-large {
+    font-size: font-size(1);
+  }
+  &.-small {
+    font-size: font-size(-1);
+  }
+}
+
+[type='text'] {
+  border-bottom: 1px solid color(res-gray, 300);
+  border-radius: 0;
+  &.has-inner-button {
+    text-overflow: ellipsis;
+    padding-right: 1rem;
+  }
+}
+
+[type='text'] {
+  label + & {
+    margin-top: .5rem;
+  }
+}
+
+textarea {
+  border: 1px solid color(res-gray, 500);
+  border-radius: $border-radius;
+  resize: vertical;
+  padding-left: .5rem;
+}
+
+textarea[rows="1"] {
+  @media (max-width: $break-mobile) {
+    min-height: 4rem;
+  }
+}
+
+[type='checkbox'],
+[type='radio'] {
+  $checkbox-color: color(res-jade, 500);
+  $checkbox-innards: inset 0 0 0 2px white;
+  position: absolute;
+  top: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  + b {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin: 0 .5em -.1em 0.2em;
+    border-radius: $border-radius;
+    border: 2px solid color(res-gray, 400);
+    cursor: pointer;
+    label:hover &,
+    &:hover {
+      border-color: color(res-jade, 400);
+    }
+  }
+  &:checked + b {
+    background: white;
+    border-color: $checkbox-color;
+    position: relative;
+    &:after {
+      content: '';
+      width: .5rem;
+      height: .5rem;
+      display: block;
+      background: $checkbox-color;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+    }
+  }
+  label &.is-small:checked {
+    + b:after {
+      width: 75%;
+      height: 75%;
+    }
+  }
+  &:disabled + b {
+    background-color: color(disabled);
+    border: none;
+    cursor: default;
+  }
+  &:focus + b {
+    border-color: color(res-jade, 400);
+  }
+}
+
+[type='radio'] {
+  + b,
+  &:checked + b:after {
+    border-radius: 50%;
+  }
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  margin: 0;
+  padding: 0 1.5rem 0 .5rem;
+  width: 100%;
+  border-radius: 2px;
+  border: 2px solid color(res-gray, 400);
+  cursor: pointer;
+  height: 2.3em;
+  background-color: white;
+  color: color(res-gray, 500);
+  position: relative;
+  background-image: url("data:image/svg+xml;utf8,<svg width='9px' height='5px' viewBox='332 15 9 5' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><polygon id='Triangle-1-Copy' stroke='none' fill='%23767676' fill-rule='evenodd' points='332 15 341 15 336.5 20'></polygon></svg>");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 10px) 50%;
+  &:hover, &:focus {
+    border-color: color(res-jade, 400);
+  }
+  &:disabled {
+    background-color: color(disabled);
+    cursor: default;
+    border-color: color(disabled);
+    color: color(res-jade, 700);
+    opacity: .5;
+  }
+  &[type='list'] {
+    width: auto;
+  }
+  label + & {
+    margin-top: .5rem;
+  }
+  label & {
+    position: relative;
+    top: 10px;
+  }
+  &.is-small {
+    font-size: font-size(-1);
+  }
+  &.is-xsmall {
+    font-size: font-size(-2);
+  }
+}
+
+option {
+  @include font(regular);
+  color: black;
+}
+
+label {
+  display: table;
+  width: 100%;
+}
+
+[type="submit"],
+[type="button"] {
+  cursor: pointer;
+  border: none;
+  color: color(res-gray, 500);
+  display: inline-block;
+  text-align: left;
+
+  &.-small {
+    font-size: font-size(-1);
+  }
+
+  &:hover, &:focus {
+    color: color(res-gray, 400);
+  }
+
+  &:focus {
+    background-color: color(res-sky, 200);
+  }
+
+  &:active,
+  &.is-active {
+    color: color(res-jade, 400);
+  }
+
+  &.ql-active {
+    color: color(res-sky, 600);
+  }
+
+  &.is-primary,
+  &.is-secondary,
+  &.is-disabled {
+    box-sizing: border-box;
+    border-radius: $border-radius;
+    padding: .6rem .8rem;
+    border: 1px solid transparent;
+    white-space: pre;
+    color: color(res-jade, 700);
+
+    &:focus {
+      border-color: color(res-gray, 500);
+    }
+
+    &.-small {
+      padding: rem(5px) rem(6px);
+    }
+  }
+
+  &.is-secondary {
+    color: color(res-sky, 700);
+  }
+
+  &.is-disabled,
+  &:disabled {
+    opacity: .5;
+    cursor: default;
+  }
+
+  &.is-primary {
+    background-color: color(res-jade, 400);
+    &:hover, &:active, &:focus {
+      background: darken(color(res-jade, 400), 10%);
+    }
+  }
+
+  &.is-secondary {
+    background-color: color(res-gray, 300);
+    &:hover, &:active, &:focus {
+      background: darken(color(res-gray, 300), 10%);
+    }
+    &.-small {
+      background-color: color(res-gray, 300);
+      &:hover, &:active {
+        background: lighten(color(res-gray, 300), 16.5%);
+      }
+    }
+  }
+
+  &.is-primary,
+  &.is-secondary {
+    &.is-disabled,
+    &:disabled {
+      background-color: color(disabled);
+      &:hover {
+        background-color: color(disabled);
+      }
+    }
+  }
+
+  &.-link {
+    color: color(res-sky, 600);
+    text-decoration: underline;
+  }
+}
+
+// TODO: remove form submit cruft during form refactor
+form [type="submit"] {
+  margin-top: 1rem;
+}
+
+output {
+  display: block;
+  font-size: font-size(-1);
+  color: color(disabled);
+  &.is-negative {
+    color: color(negative);
+  }
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin-bottom: 2em;
+  & ~ fieldset {
+    margin-top: 1em;
+  }
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+  > button {
+    margin-bottom: 1em;
+  }
+  &.is-horizontal {
+    // TODO: Remove, only one instance (select-image)
+
+    // ideally would be done with flexbox
+    // however, there are various browser bugs
+    // that prevent fieldset's display property
+    // from changing
+    > * {
+      float: left;
+    }
+    &.has-two {
+      > #{res-shim('.res-select')} {
+        width: 48%;
+        & > .res-select__wrap {
+          width: 100%;
+        }
+      }
+      > #{res-shim('.res-select')}:nth-of-type(1) {
+        margin-right: 2%;
+      }
+      > #{res-shim('.res-select')}:nth-of-type(2) {
+        margin-left: 2%;
+      }
+      legend:first-child {
+        width: 100%;
+        margin-bottom: .5rem;
+      }
+    }
+  }
+  > legend:first-child {
+    @include font(medium);
+    margin: 0 0 .5em;
+    font-size: font-size(0);
+    @media screen and (min--moz-device-pixel-ratio:0) {
+      margin-top: 0;
+    }
+  }
+  hr + & {
+    margin-top: 2rem;
+  }
+}
+
+hr + section {
+  margin-top: 2rem;
+}
+
+legend {
+  margin: .5em 0;
+  padding: 0;
+  font-size: font-size(0);
+}
+
+progress {
+  position: absolute;
+  appearance: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 6px;
+  color: color(res-jade, 400);
+  background: color(res-gray, 600);
+  &::-webkit-progress-bar {
+    background: color(res-gray, 600);
+  }
+  &::-webkit-progress-value {
+    background: currentColor;
+  }
+  &::-moz-progress-bar {
+    background: color(res-jade, 400);
+  }
+  &::-moz-progress-value {
+    background: currentColor;
+  }
+  &::progress-bar {
+    background: color(res-gray, 600);
+  }
+  &::progress-value {
+    background: currentColor;
+  }
+}
+
+// Source: assets/css/base/_global.scss
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+// Source: assets/css/base/_iframe.scss
+iframe {
+  max-width: 100%;
+  border: none;
+}
+
+// Source: assets/css/base/_img.scss
+img {
+  max-width: 100%;
+}
+
+// Source: assets/css/base/_links.scss
+a, [data-autolink-id] {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+  &:focus {
+    outline: none;
+    background-color: color(res-sky, 200);
+  }
+  p & {
+    color: color(res-jade, 500);
+    &:hover {
+      color: color(res-jade, 700);
+    }
+  }
+}
+
+[href] {
+  color: color(res-sky, 600);
+}
+
+// Source: assets/css/base/_scrollbars.scss
+::-webkit-scrollbar {
+  background-color: color(res-gray, 300);
+  width: 8px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: color(res-jade, 500);
+}
+
+// Source: assets/css/base/_svg.scss
+body > svg.svg-store {
+  // symbols
+  display: none;
+}
+
+svg {
+  font-size: 20px; // Scale based on font size
+  max-width: 1.2em; // constrain width in IE while in Flexbox
+  height: 1em;
+  display: inline-block;
+  fill: currentColor;
+  margin: -.2em 0;
+  // both fill and color to account for firefox specificity weirdness--
+  // even if fill: currentColor is overriden by fill: green, it won't
+  // let the fill override unless the color is changed :(
+  &.is-positive {
+    fill: color(positive);
+    color: color(positive);
+  }
+  &.is-negative {
+    fill: color(negative);
+    color: color(negative);
+  }
+  &.is-cautionary {
+    fill: color(cautionary);
+    color: color(cautionary);
+  }
+  &.is-primary {
+    fill: color(res-jade, 400);
+    color: color(res-jade, 400);
+  }
+}
+
+#{res-shim('.res-icon')} {
+  color: inherit;
+}
+
+// Source: assets/css/base/_tables.scss
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+tr {
+  border-bottom: 1px solid color(res-gray, 300);
+  &:hover {
+    background-color: color(res-sky, 200);
+  }
+}
+
+th,
+td {
+  padding: rem(13px) rem(13px);
+  font-size: font-size(-1);
+}
+
+th {
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: .1em;
+  font-size: font-size(-1);
+  text-align: left;
+  border-bottom: 3px solid color(res-gray, 300);
+  color: color(res-gray, 500);
+  background-color: white;
+}
+
+// Source: assets/css/base/_typography.scss
+p {
+  margin: 0 0 1em;
+}
+
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1em;
+  line-height: 1.2;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: color(res-gray, 400);
+}
+
+time {
+  font-size: font-size(-2);
+}
+
+strong {
+  @include font(medium);
+}
+em {
+  @include font(regular, italic);
+}
+strong em, em strong {
+  @include font(medium, italic);
+}
+
+// Source: assets/css/patterns/_p-buttoned-input.scss
+$p: '.p-buttoned-input';
+
+#{$p} {
+  margin-bottom: 3rem;
+  overflow: auto;
+}
+
+#{$p} input {
+  height: 3rem;
+  width: 10rem;
+  border: 2px solid color(res-gray, 300);
+  padding: 1rem .75rem;
+  display: inline-block;
+  float: left;
+}
+
+#{$p} > button {
+  height: 3rem;
+  width: 3.5rem;
+  background: color(res-gray, 300);
+  margin-top: .5rem;
+  color: color(res-jade, 500);
+  position: relative;
+  padding-left: .5rem;
+}
+
+// Source: assets/css/patterns/_p-button-row.scss
+$p: '.p-button-row';
+
+#{$p},
+#{$p}--left,
+#{$p}--right,
+#{$p}--center {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  [type="button"],
+  [type="submit"] {
+    margin-left: .5em;
+  }
+  select {
+    width: auto;
+  }
+}
+
+#{$p},
+#{$p}--left {
+  flex-direction: row;
+}
+
+#{$p}--left button:first-child {
+  margin-left: 0;
+}
+
+#{$p}--right {
+  flex-direction: row-reverse;
+}
+
+#{$p}--split {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#{$p}--center {
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+// Source: assets/css/patterns/_p-flex.scss
+$p: '.p-flex';
+
+#{$p},
+#{$p}--v { // horizontal
+  display: flex;
+}
+
+#{$p}--v { // vertical
+  flex-direction: column;
+}
+
+#{$p}--start {
+  align-items: flex-start;
+}
+
+#{$p}--align-center {
+  align-items: center;
+}
+
+#{$p}--justify-center {
+  justify-content: center;
+}
+
+#{$p}--justify-between {
+  justify-content: space-between;
+}
+
+#{$p}--wrap {
+  flex-wrap: wrap;
+}
+
+// Source: assets/css/patterns/_p-form-meta.scss
+$p: '.p-form-meta';
+
+#{$p} {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  // TODO: See if these still exist at all
+  fieldset > & {
+    legend {
+      @include font(medium);
+      color: color(res-gray, 600);
+      margin-bottom: .5em;
+      margin-top: 1em;
+    }
+  }
+  label {
+    display: block;
+    width: auto;
+    color: color(res-gray, 500);
+    margin: .5em 0 0 0;
+    padding: 0;
+    font-size: font-size(-1);
+  }
+  label + * {
+    margin-left: .75rem;
+  }
+  &.is-below {
+    min-height: 18px;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+  &.is-split {
+    justify-content: space-between;
+  }
+  #{res-shim('.res-icon[name="more"]')} {
+    position: absolute;
+    right: -25px;
+    top: -3px;
+    bottom: 0;
+    margin: auto;
+    .is-loading & {
+      position: relative;
+      right: unset;
+      top: 1.5rem;
+      bottom: unset;
+      margin: 0 0 0 .5rem;
+    }
+    .is-loading.has-content-or-focus & {
+      top: unset;
+    }
+  }
+}
+
+// Source: assets/css/layouts/_l-content.scss
+$l: '.l-content';
+
+#{$l} {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  @media (max-width: $break-mobile) {
+    margin-top: -45px;
+    &.has-aggrandized {
+      z-index: 3;
+      overflow-x: hidden;
+    }
+  }
+}
+
+#{$l}__inner {
+  flex: 1;
+  padding: 0 1rem;
+  overflow: auto;
+  > * {
+    max-width: $inner-content-width;
+    margin-left: auto;
+    margin-right: auto;
+    &.scrollmagic-pin-spacer {
+      max-width: $content-width;
+    }
+  }
+  &.has-sticky-footer {
+    margin-bottom: 2rem;
+  }
+  &:not(.p-flex--v) {
+    margin-top: $toolbar-height + 10px;
+    > *:first-child:not(.m-search-panel) {
+      margin-top: 1em;
+    }
+    > *:last-child {
+      padding-bottom: 4em;
+    }
+    .m-community-select__lockup ~ & {
+      margin-top: 0;
+    }
+  }
+  .m-nav--metadata ~ #{$l} & {
+    @media (min-width: $break-mobile) {
+      margin-top: 0;
+    }
+  }
+  .m-nav--editor ~ #{$l} &,
+  .m-nav--package ~ #{$l} & {
+    width: 100%;
+    // magic number to fix
+    // https://github.com/voxmedia/anthem/issues/1561
+
+    @media (max-width: $break-mobile) {
+      padding-top: 6.5rem;
+      &.is-package {
+        padding-top: 3.5rem;
+      }
+    }
+
+    @media (max-width: rem(1550px)) {
+      flex-flow: wrap;
+    }
+
+    .m-entry {
+      flex: 1 0 auto;
+      align-self: center;
+      width: 100%;
+      z-index: 1;
+      @media (max-width: $break-mobile) {
+        width: 100vw;
+      }
+    }
+  }
+  .m-nav--dashboard ~ #{$l} & {
+    padding: 0rem;
+    *:first-child {
+      @media (min-width: $break-medium + em(1px)) {
+        margin-top: 0;
+      }
+    }
+  }
+  &.is-wide {
+    > * {
+      max-width: $break-xlarge;
+    }
+  }
+  &.is-padded {
+    padding: 1rem;
+  }
+  &.p-flex--v {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    @media (min-width: $break-mobile + .01em) {
+      overflow-y: scroll;
+      > *:first-child {
+        margin-top: 1rem;
+      }
+    }
+  }
+  a#compose-body-section {
+    // a nearly invisible anchor tag as a fix for https://vmproduct.atlassian.net/browse/EDEX-91
+    width: 100%;
+    height: 1px;
+    cursor: default;
+    position: relative;
+    z-index: -10; // required so that it does not obstruct content above the H2 tag
+    @media (max-width: $break-medium) {
+      margin-top: -55px;
+    }
+  }
+}
+
+// Source: assets/css/modules/application/_m-message.scss
+// Using res-banner in Vue
+#{res-shim('.res-banner')} .res-banner__button {
+  text-decoration: underline;
+}
+
+$m: '.m-message';
+
+#{$m} {
+  padding: .5rem 1rem;
+  font-size: font-size(-1);
+  z-index: z(6, 1);
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  color: color(res-gray, 700);
+  button {
+    color: rgba(white, .9);
+    text-decoration: underline;
+    cursor: pointer;
+    &:hover {
+      color: rgba(white, .8);
+    }
+  }
+  a {
+    color: inherit;
+    text-decoration: underline;
+    &:hover  {
+      opacity: 1;
+      color: color(res-sky, 600);
+    }
+  }
+  .l-content__inner & {
+    width: initial;
+    margin-bottom: 1rem;
+  }
+}
+
+#{$m}.is-primary {
+  background-color: color(res-sky, 200);
+}
+#{$m}.is-cautionary {
+  background-color: color(res-gold, 200);
+}
+#{$m}.is-negative {
+  background-color: color(res-apple, 300);
+  color: white;
+}
+#{$m}.is-positive {
+  background-color: color(res-grass, 300);
+}
+
+#{$m}.is-primary,
+#{$m}.is-cautionary,
+#{$m}.is-positive {
+  color: color(res-gray, 700);
+  button {
+    color: color(res-gray, 600);
+  }
+}
+
+#{$m}.is-disabled {
+  background-color: color(disabled);
+}
+
+#{$m}__close {
+  align-self: center;
+}
+
+#{$m}__text {
+  height: 2rem;
+  line-height: 2rem;
+  margin-right: 1rem;
+}
+
+#{$m}__buttons {
+  display: inline-flex;
+  *:nth-child(2),
+  *:nth-child(3) {
+    margin: 0 0 0 .5rem;
+  }
+  a, button {
+    height: 2rem;
+    line-height: 22px;
+  }
+}

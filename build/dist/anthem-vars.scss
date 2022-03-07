@@ -1,0 +1,392 @@
+// Source: assets/css/_settings.scss
+// COLORS
+
+// State colors, but like, the 'on/off' kind of state, not the governmental kind?
+$positive-color:    #A2D46F;
+$negative-color:    #D91E18;
+$cautionary-color:  #F1B018;
+
+// State colors, the governmental kind
+$us-web-standards-primary: #0071bc;
+$french-flag-red: #ED2E38;
+$malaysian-flag-yellow: #ffcc00;
+
+// Goth colors
+$soulblack: #333333;
+
+// Mauvenders
+$mauvender: #DFB0FF;
+
+// ------------------------
+// TYPOGRAPHY
+
+$line-height: 1.5;
+
+// ------------------------
+// BREAKPOINTS
+
+$break-small:       30em;
+$break-medium:      40em;
+$break-medium-large: 50em;
+$break-large:       60em;
+$break-xlarge:      80em;
+$break-mobile: $break-medium;
+$break-nav-alt: 71em;
+$crop-tool-bp: 42em;
+// Tablet breakpoints for dashboard
+$break-large-dashboard: 70em;
+
+// ------------------------
+// DIMENSIONS
+
+// Height of top bar/s
+$toolbar-height:    35px;
+// General layout widths
+$content-width:     51.75rem;
+$inner-content-width: 43rem;
+// Default border radius for buttons etc
+$border-radius:     3px;
+// Height of dash navbar
+$dash-navbar-height: 49px;
+// Height of navbar for editor pages
+$editor-navbar-height: 72px;
+
+$mobile-navbar-height: 45px;
+// Dashboard search panel
+$search-panel-width: 360px;
+$search-toggle-width: 40px;
+$search-footer-height: 100px;
+
+
+// ------------------------
+// ANIMATION SPEED
+$ui-speed:          .2s;
+
+
+// ------------------------
+// DEBUG MODE
+
+// enables a breakpoint display;
+$debug: false;
+
+// Source: assets/css/support/_colors.scss
+$_colors: (
+  positive: $res-color-grass-300,
+  negative: $res-color-apple-300,
+  cautionary: $res-color-gold-400,
+  disabled: $res-color-gray-400
+);
+
+// this is a shim to populate resonance color variables into the
+// color() function used throughout anthem. it should be noted that
+// if a color is added or removed from the resonance variables, it
+// will have to be mirrored here as well (or until sass supports
+// variable interpolation)
+//
+// further discussion here:
+// https://github.com/voxmedia/anthem/pull/5090#discussion_r145829570
+$_res-colors: (
+  res-sky: (
+    100: $res-color-sky-100,
+    200: $res-color-sky-200,
+    300: $res-color-sky-300,
+    400: $res-color-sky-400,
+    500: $res-color-sky-500,
+    600: $res-color-sky-600,
+    700: $res-color-sky-700
+  ),
+  res-jade: (
+    100: $res-color-jade-100,
+    200: $res-color-jade-200,
+    300: $res-color-jade-300,
+    400: $res-color-jade-400,
+    500: $res-color-jade-500,
+    600: $res-color-jade-600,
+    700: $res-color-jade-700
+  ),
+  res-rose: (
+    100: $res-color-rose-100,
+    200: $res-color-rose-200,
+    300: $res-color-rose-300,
+    400: $res-color-rose-400,
+    500: $res-color-rose-500,
+    600: $res-color-rose-600,
+    700: $res-color-rose-700
+  ),
+  res-gold: (
+    100: $res-color-gold-100,
+    200: $res-color-gold-200,
+    300: $res-color-gold-300,
+    400: $res-color-gold-400,
+    500: $res-color-gold-500,
+    600: $res-color-gold-600,
+    700: $res-color-gold-700
+  ),
+  res-gray: (
+    100: $res-color-gray-100,
+    200: $res-color-gray-200,
+    300: $res-color-gray-300,
+    400: $res-color-gray-400,
+    500: $res-color-gray-500,
+    600: $res-color-gray-600,
+    700: $res-color-gray-700
+  ),
+  res-apple: (
+    100: $res-color-apple-100,
+    300: $res-color-apple-300,
+    500: $res-color-apple-500
+  ),
+  res-grass: (
+    100: $res-color-grass-100,
+    300: $res-color-grass-300,
+    500: $res-color-grass-500
+  )
+);
+
+@function color($color, $tint: false) {
+  @if str-slice($color + '', 1, 3) == 'res' {
+    @if $tint {
+      @return map-get(map-get($_res-colors, $color), $tint);
+    }
+    @else {
+      @error 'color() function requires explicit tint value when referencing Resonance colors';
+    }
+  }
+  @else {
+    @return map-get($_colors, $color);
+  }
+}
+
+// Source: assets/css/support/_debug-media.scss
+@function make-debug-bg($bps) {
+  $bplist: to right, rgba(tomato, .5) 0px;
+  @for $i from 1 through length($breakpoints) {
+    $bplist: append($bplist, (rgba(tomato, .5) nth($breakpoints, $i), purple, rgba(tomato, .5) (nth($breakpoints, $i) + .1rem)));
+  }
+  @return $bplist;
+}
+
+@if $debug == true {
+  body:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    text-align: left;
+    font-size: font-size(-1);
+    padding-left: .25rem;
+
+    $breakpoints: 30rem, 40rem, 50rem, 60rem, 71rem, 80rem;
+    background: linear-gradient(make-debug-bg($breakpoints));
+  }
+}
+
+// Source: assets/css/support/_font-size.scss
+@function font-size($scale) {
+  $value: map-get($res-font-scale-map, $scale);
+  $keys: map-keys($res-font-scale-map);
+  @if $value {
+    @return $value;
+  }
+  @else {
+    @error "Invalid size reference in font-size() function; #{$scale} is not a number between #{nth($keys, 1)} and #{nth($keys, length($keys))}";
+  }
+}
+
+// Source: assets/css/support/_font.scss
+$res-font-weights: (
+  regular: 400,
+  medium: 500,
+  semibold: 600
+);
+
+@mixin font($weight, $style: false) {
+  @if(map-has-key($res-font-weights, $weight)) {
+    font-weight: map-get($res-font-weights, $weight);
+    @if($style) {
+      font-style: $style;
+    }
+  } @else {
+    @error("Font weight doesn't exist!")
+  }
+}
+
+// Source: assets/css/support/_margins.scss
+.m-tb-0 {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.m-t-1 {
+  margin-top: 1rem !important;
+}
+
+.m-t-0 {
+  margin-top: 0 !important;
+}
+
+.m-t-a {
+  margin-top: auto !important;
+}
+
+.m-t-5 {
+  margin-top: .5rem !important;
+}
+
+.m-b-1 {
+  margin-bottom: 1rem !important;
+}
+
+.m-b-5 {
+  margin-bottom: .5rem !important;
+}
+
+.m-b-a {
+  margin-bottom: auto !important;
+}
+
+.m-tb-1 {
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.m-tb-5 {
+  margin-top: .5rem !important;
+  margin-bottom: .5rem !important;
+}
+
+.m-t-2 {
+  margin-top: 2rem !important;
+}
+
+.m-b-2 {
+  margin-bottom: 2rem !important;
+}
+
+.m-l-1 {
+  margin-left: 1rem !important;
+}
+
+.m-l-a {
+  margin-left: auto !important;
+}
+
+.m-l-2 {
+  margin-left: 2rem !important;
+}
+.m-l-5 {
+  margin-left: .5rem !important;
+}
+
+.m-r-1 {
+  margin-right: 1rem !important;
+}
+
+.m-r-5 {
+  margin-right: .5rem !important;
+}
+
+.m-r-a {
+  margin-right: auto !important;
+}
+
+// Source: assets/css/support/_moz.scss
+@mixin moz {
+  @supports (-moz-appearance: meterbar) {
+    @content;
+  }
+}
+
+// Source: assets/css/support/_msedge.scss
+@mixin msedge {
+  @supports (-ms-ime-align: auto) {
+    @content;
+  }
+}
+
+// Source: assets/css/support/_rem.scss
+@function rem($px, $base: 16) {
+  // if it's already a px value, convert to unitless number
+  @if (unit($px) == 'px') {
+    $px: $px / 1px;
+  }
+  // if it's not an integer it's gonna create subpixel values
+  @if ($px % 1 == 0) {
+    $divided: $px / $base;
+    $px: $divided * 1rem;
+  } @else {
+    // so just outright stop that from happening at compilation
+    @error 'rem function must take a whole number'
+  }
+  @return $px;
+}
+
+
+@function em($px, $base: 16) {
+  // if it's already a px value, convert to unitless number
+  @if (unit($px) == 'px') {
+    $px: $px / 1px;
+  }
+  // if it's not an integer it's gonna create subpixel values
+  @if ($px % 1 == 0) {
+    $divided: $px / $base;
+    $px: $divided * 1em;
+  } @else {
+    // so just outright stop that from happening at compilation
+    @error 'em function must take a whole number'
+  }
+  @return $px;
+}
+
+// Source: assets/css/support/_safari.scss
+// Selector for Safari 7+
+$safari:  '_::-webkit-full-page-media, _:future, :root';
+
+@mixin safari {
+  @at-root #{$safari} & {
+    @content;
+  }
+}
+
+// Source: assets/css/support/_spacing.scss
+@function spacing($scale) {
+  $value: map-get($res-space-scale-map, $scale);
+  $keys: map-keys($res-space-scale-map);
+  @if $value {
+    @return $value;
+  }
+  @else {
+    @error "Invalid size reference in spacing() function; #{$scale} is not a number between #{nth($keys, 1)} and #{nth($keys, length($keys))}";
+  }
+}
+
+// Source: assets/css/support/_tint.scss
+@function tint($color, $amt) {
+  @return mix(white, $color, $amt);
+}
+
+// Source: assets/css/support/_toPx.scss
+@function toPx($size, $base: 16px) {
+  @return ($size / 1em) * $base;
+}
+
+// Source: assets/css/support/_z-index.scss
+@function z($mils, $digit: 0) {
+  @if type-of($mils) != 'number' {
+    @error 'The $mils parameter for z(), "#{$mils}", must be a number';
+  }
+  @else if type-of($digit) != 'number' {
+    @error 'The $digit parameter for z(), "#{$digit}", must be a number';
+  }
+  @else if ($mils % 1 != 0) or ($digit % 1 != 0) {
+    @error 'A non-integer value was passed into z(). Rounding.';
+    @return (round($mils) * 1000000) + round($digit);
+  }
+  @else {
+    @return ($mils * 1000000) + $digit;
+  }
+}
+
